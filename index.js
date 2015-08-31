@@ -1,20 +1,5 @@
-
-/**
- * Module dependencies
- */
-
 import isPointerInside from 'is-pointer-inside';
 import offset from 'global-offset';
-
-/**
- * Expose detection
- *
- * @param {Element} el
- * @param {Object} event
- * @param {Number} dist
- * @return {Boolean}
- * @api public
- */
 
 export default (el, {pageX, pageY}, dist = 50) => {
   const {left, top} = offset(el);

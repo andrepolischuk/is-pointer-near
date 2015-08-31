@@ -1,6 +1,6 @@
 # is-pointer-near [![Build Status][travis-image]][travis-url]
 
-  > Check if pointer is near the element
+> Check if pointer is near the element
 
 ## Install
 
@@ -23,11 +23,11 @@ document.addEventListener('mousemove', function(event) {
 
 ### isPointerNear(element, event[, distance])
 
-  Return true if pointer is within `distance` from `element`
+Return true if pointer is within `distance` from `element`
 
 ## License
 
-  MIT
+MIT
 
 [travis-url]: https://travis-ci.org/andrepolischuk/is-pointer-near
 [travis-image]: https://travis-ci.org/andrepolischuk/is-pointer-near.svg?branch=master
