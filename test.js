@@ -1,5 +1,5 @@
-import isPointerNear from './index';
-import assert from 'assert';
+import test from 'ava';
+import isPointerNear from './index.es5';
 
 const parent = {
   offsetLeft: 50,
@@ -17,32 +17,32 @@ const children = {
   offsetParent: parent
 };
 
-it('should return true if near the parent', () => {
+test('should return true if near the parent', t => {
   const pointer = {pageX: 25, pageY: 25};
-  assert(isPointerNear(parent, pointer) === true);
-  assert(isPointerNear(children, pointer) === false);
+  t.true(isPointerNear(parent, pointer));
+  t.false(isPointerNear(children, pointer));
 });
 
-it('should return true if near the children', () => {
+test('should return true if near the children', t => {
   const pointer = {pageX: 225, pageY: 225};
-  assert(isPointerNear(parent, pointer) === false);
-  assert(isPointerNear(children, pointer) === true);
+  t.false(isPointerNear(parent, pointer));
+  t.true(isPointerNear(children, pointer));
 });
 
-it('should return true if near the both', () => {
+test('should return true if near the both', t => {
   const pointer = {pageX: 175, pageY: 75};
-  assert(isPointerNear(parent, pointer) === true);
-  assert(isPointerNear(children, pointer) === true);
+  t.true(isPointerNear(parent, pointer));
+  t.true(isPointerNear(children, pointer));
 });
 
-it('should return false if not near', () => {
+test('should return false if not near', t => {
   const pointer = {pageX: 225, pageY: 25};
-  assert(isPointerNear(parent, pointer) === false);
-  assert(isPointerNear(children, pointer) === false);
+  t.false(isPointerNear(parent, pointer));
+  t.false(isPointerNear(children, pointer));
 });
 
-it('should return false if inside', () => {
+test('should return false if inside', t => {
   const pointer = {pageX: 125, pageY: 125};
-  assert(isPointerNear(parent, pointer) === false);
-  assert(isPointerNear(children, pointer) === false);
+  t.false(isPointerNear(parent, pointer));
+  t.false(isPointerNear(children, pointer));
 });
