@@ -17,31 +17,31 @@ const children = {
   offsetParent: parent
 };
 
-test('should return true if near the parent', t => {
+test('near the parent', t => {
   const pointer = {pageX: 25, pageY: 25};
   t.true(isPointerNear(parent, pointer));
   t.false(isPointerNear(children, pointer));
 });
 
-test('should return true if near the children', t => {
+test('near the children', t => {
   const pointer = {pageX: 225, pageY: 225};
   t.false(isPointerNear(parent, pointer));
   t.true(isPointerNear(children, pointer));
 });
 
-test('should return true if near the both', t => {
+test('near the both', t => {
   const pointer = {pageX: 175, pageY: 75};
   t.true(isPointerNear(parent, pointer));
   t.true(isPointerNear(children, pointer));
 });
 
-test('should return false if not near', t => {
+test('not near', t => {
   const pointer = {pageX: 225, pageY: 25};
   t.false(isPointerNear(parent, pointer));
   t.false(isPointerNear(children, pointer));
 });
 
-test('should return false if inside', t => {
+test('inside', t => {
   const pointer = {pageX: 125, pageY: 125};
   t.false(isPointerNear(parent, pointer));
   t.false(isPointerNear(children, pointer));

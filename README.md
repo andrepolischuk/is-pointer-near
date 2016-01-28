@@ -11,10 +11,10 @@ npm install --save is-pointer-near
 ## Usage
 
 ```js
-var isPointerNear = require('is-pointer-near');
-var el = document.querySelector('.hello');
+import isPointerNear from 'is-pointer-near';
 
-document.addEventListener('mousemove', function(event) {
+document.addEventListener('mousemove', event => {
+  const el = document.querySelector('.hello');
   isPointerNear(el, event, 25); // true if pointer near the el
 }, false);
 ```
@@ -23,7 +23,26 @@ document.addEventListener('mousemove', function(event) {
 
 ### isPointerNear(element, event[, distance])
 
-Return true if pointer is within `distance` from `element`
+Return `true` if pointer is within `distance` from `element`
+
+#### element
+
+Type: `element`
+
+DOM element.
+
+#### event
+
+Type: `object`
+
+Pointer event.
+
+#### distance
+
+Type: `number`  
+Default: `50`
+
+Distance to the `element`.
 
 ## Related
 
