@@ -46,7 +46,9 @@ Distance to the `element`.
 
 ## Related
 
-* [is-pointer-inside][is-pointer-inside] - Check if pointer is inside the element
+* [coordinates][coordinates] — calculate relative coordinates
+* [global-offset][global-offset] — element global offset
+* [is-pointer-inside][is-pointer-inside] — check if pointer is inside the element
 
 ## License
 
@@ -55,4 +57,6 @@ MIT
 [travis-url]: https://travis-ci.org/andrepolischuk/is-pointer-near
 [travis-image]: https://travis-ci.org/andrepolischuk/is-pointer-near.svg?branch=master
 
+[coordinates]: https://github.com/andrepolischuk/coordinates
+[global-offset]: https://github.com/andrepolischuk/global-offset
 [is-pointer-inside]: https://github.com/andrepolischuk/is-pointer-inside
